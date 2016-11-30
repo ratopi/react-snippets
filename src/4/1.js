@@ -1,20 +1,18 @@
-function Welcome( props )
+function update()
 {
-	return <h1>Hello, {props.name}.</h1>;
-}
-
-function App()
-{
-	return (
+	const element = (
 		<div>
-			<Welcome name="Anna"/>
-			<Welcome name="Berta"/>
-			<Welcome name="Cecille"/>
+			<h1>Hello, world!</h1>
+
+			<h2>It is {new Date().toLocaleTimeString()}.</h2>
 		</div>
+	);
+	ReactDOM.render(
+		element,
+		document.getElementById( "root" )
 	);
 }
 
-ReactDOM.render(
-	<App />,
-	document.getElementById( "root" )
-);
+update();
+
+setInterval( update, 1000 );
