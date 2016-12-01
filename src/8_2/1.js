@@ -63,7 +63,7 @@ const MessageContainer = React.createClass(
 					}
 					else
 					{
-						messages.pop();
+						messages.shift();
 					}
 
 					return {
