@@ -1,3 +1,14 @@
+const Greeting = React.createClass(
+	{
+		"render": function ()
+		{
+			return (
+				<h1>Hello, world!</h1>
+			);
+		}
+	}
+);
+
 const Clock = React.createClass(
 	{
 		"getInitialState": function ()
@@ -29,17 +40,18 @@ const Clock = React.createClass(
 		"render": function ()
 		{
 			return (
-				<div>
-					<h1>Hello, world!</h1>
-
-					<h2>It is {this.state.date.toLocaleTimeString()}.</h2>
-				</div>
+				<span>It is {this.state.date.toLocaleTimeString()}.</span>
 			);
 		}
 	}
 );
 
 ReactDOM.render(
-	<Clock />,
+	(
+		<div>
+			<Greeting />
+			<h2><Clock /></h2>
+		</div>
+	),
 	document.getElementById( "root" )
 );
